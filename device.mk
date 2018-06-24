@@ -18,6 +18,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, vendor/xiaomi/mido/mido-vendor.mk)
 
+# Gapps version
+GAPPS_VARIANT := micro
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -267,3 +270,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/fstman.ini:system/etc/wifi/fstman.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+ifneq ($(WITH_GAPPS),)
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+endif
