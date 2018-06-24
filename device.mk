@@ -271,6 +271,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
 
+ifdef USE_DEV_CERTIFICATE
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := $(USE_DEV_CERTIFICATE)
+endif
+
 ifneq ($(WITH_GAPPS),)
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 endif
