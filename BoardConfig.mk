@@ -201,6 +201,39 @@ TARGET_RIL_VARIANT := caf
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 
+# twrp recovery
+ifneq ($(WITH_TWRP),)
+ifneq ($(strip $(TARGET_BUILD_VARIANT)), eng)
+$(error TWRP supports eng build variant only)
+endif
+
+RECOVERY_VARIANT := twrp
+
+# TODO: review
+TW_EXCLUDE_SUPERSU := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_INPUT_BLACKLIST := hbtp_vm
+# /TODO
+
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_SUPPRESS_SECURE_ERASE :=  true
+
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_INCLUDE_CRYPTO := true
+TW_MAX_BRIGHTNESS := 255
+TW_THEME := portrait_hdpi
+
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/twrp.fstab
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+endif
+
+
 # Sensor
 USE_SENSOR_MULTI_HAL := true
 
