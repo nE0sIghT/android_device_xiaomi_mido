@@ -223,6 +223,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE :=  true
 
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
 TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_THEME := portrait_hdpi
