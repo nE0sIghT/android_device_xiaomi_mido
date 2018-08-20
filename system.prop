@@ -188,4 +188,4 @@ ro.sys.fw.trim_enable_memory=2147483648
 wifi.interface=wlan0
 
 # nS
-cm.updater.uri=https://ota.coldzone.ru/api
+cm.updater.uri=https://ota.coldzone.ru/api/v1/{device}/{type}/{incr}
