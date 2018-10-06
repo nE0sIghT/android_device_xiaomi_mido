@@ -48,6 +48,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += cm.updater.uri=https://ota.coldzone.ru/api/v1/{device}/{type}/{incr}
+
 ifdef USE_DEV_CERTIFICATE
     PRODUCT_DEFAULT_DEV_CERTIFICATE := $(USE_DEV_CERTIFICATE)
 endif
