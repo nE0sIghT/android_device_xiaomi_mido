@@ -63,6 +63,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi_8953
 
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://ota.coldzone.ru/api/v1/{device}/{type}/{incr}
+
 ifdef USE_DEV_CERTIFICATE
     PRODUCT_DEFAULT_DEV_CERTIFICATE := $(USE_DEV_CERTIFICATE)
 endif
