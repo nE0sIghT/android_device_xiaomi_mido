@@ -63,6 +63,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi_8953
 
+ifdef USE_DEV_CERTIFICATE
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := $(USE_DEV_CERTIFICATE)
+endif
+
 ifneq ($(WITH_GAPPS),)
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 endif
