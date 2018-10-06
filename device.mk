@@ -17,6 +17,10 @@
 $(call inherit-product, vendor/xiaomi/mido/mido-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
+
+# Gapps version
+GAPPS_VARIANT := micro
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
@@ -58,3 +62,7 @@ PRODUCT_COPY_FILES += \
 # Lineage hardware
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi_8953
+
+ifneq ($(WITH_GAPPS),)
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+endif
