@@ -57,4 +57,5 @@ endif
 
 ifneq ($(WITH_GAPPS),)
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+GAPPS_PRODUCT_PACKAGES += CalculatorGoogle
 endif
