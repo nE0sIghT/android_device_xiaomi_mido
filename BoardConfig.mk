@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Target kernel, must be set before inheriting common tree
-TARGET_KERNEL_VERSION := 3.18
+TARGET_KERNEL_VERSION := 4.9
 
 # Inherit from common msm8953-common
 -include device/xiaomi/msm8953-common/BoardConfigCommon.mk
