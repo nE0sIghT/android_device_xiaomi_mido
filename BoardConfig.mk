@@ -63,6 +63,8 @@ endif
 
 RECOVERY_VARIANT := twrp
 
+TW_USE_TOOLBOX := true
+
 # TODO: review
 TW_EXCLUDE_SUPERSU := true
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -78,6 +80,7 @@ BOARD_SUPPRESS_SECURE_ERASE :=  true
 
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_THEME := portrait_hdpi
